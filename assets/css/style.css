@@ -140,14 +140,6 @@ tr:hover .cut { opacity: 1; }
 	* { -webkit-print-color-adjust: exact; }
 	html { background: none; padding: 0; }
 	body { box-shadow: none; margin: 0; }
-	span:empty { display: none; }
 	.add, .cut { display: none; }
-
-@page { margin: 0; }
-
-/*ACV content-start*/
-header img{
-	height: 50%;
-	width: 50%;
 }
-/*ACV content-end*/
+@page { margin: 0; }
