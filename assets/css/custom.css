@@ -4,5 +4,17 @@ header img{
 }
 
 @media print {
-	.noprint { display: none; }	
+	.noprint { display: none !important; }	
+}
+
+.nodisplay{
+	display: none;
+}
+
+.display: {
+	display: block;
+}
+
+table.cpanel td {
+    text-align: center;
 }
