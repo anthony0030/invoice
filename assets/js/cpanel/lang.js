@@ -10,7 +10,10 @@ function changelanggr()
     document.getElementById("subtotal").className = "subtotalgr";
     document.getElementById("tax").className = "taxgr";
     document.getElementById("total").className = "totalgr";
+    document.getElementById("gr").className = "nodisplay";
+    document.getElementById("en").className = "display";
 }
+
 function changelangen()
 {
     document.getElementById("date").className = "date";
@@ -23,5 +26,8 @@ function changelangen()
     document.getElementById("subtotal").className = "subtotal";
     document.getElementById("tax").className = "tax";
     document.getElementById("total").className = "total";
+    document.getElementById("en").className = "nodisplay";
+    document.getElementById("gr").className = "display";
 }
+
 
