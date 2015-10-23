@@ -78,7 +78,7 @@
 				</tbody>
 			</table>
 			<a class="add noprint">+</a>
-			<table class="balance">
+			<table class="balance" id="balance">
 				<tbody><tr>
 					<th><span class="subtotal" id="subtotal"></span></th>
 					<td><span>€</span><span>600.00</span></td>
@@ -93,7 +93,42 @@
 				</tr>
 			</tbody></table>
 		</article>
-		<img src="assets/img/flags/gb.png" class="noprint" onclick="changelang()">
-		<img src="assets/img/flags/gr.png" class="noprint" onclick="changelanggr()">
+		<table class="cpanel noprint" id="cpanel">
+			<tr>
+				<td>
+				<!-- start of lang togle -->
+					<div class="nodisplay" id="en">
+						<img src="assets/img/flags/en.png" onclick="changelangen()">
+					</div>
+					<div class="display" id="gr">
+						<img src="assets/img/flags/gr.png" onclick="changelanggr()">
+					</div>
+				<!-- end of lang togle -->	
+				</td>
+
+				<td>
+				<!-- start of  color -->
+					<div class="nodisplay" id="color">
+						<img src="assets/img/color/color.jpg" onclick="changecoloron()">
+					</div>
+					<div class="display" id="nocolor">
+						<img src="assets/img/color/blackandwhite.jpg" onclick="changecoloroff()">
+					</div>
+				<!-- end of  color -->
+				</td>
+				
+				<td>
+				<!-- start of price -->
+					<div class="nodisplay" id="euroon">
+						<img src="assets/img/euro/euroon.jpg" onclick="changeeuroon()">
+					</div>
+					<div class="display" id="eurooff">
+						<img src="assets/img/euro/eurooff.jpg" onclick="changeeurooff()">
+					</div>
+				<!-- end of lang price -->
+				</td>
+			</tr>
+
+		</table>
 </body>
 </html>
