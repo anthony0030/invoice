@@ -8,6 +8,7 @@
 		<link rel="license" href="http://www.opensource.org/licenses/mit-license/">
 		<script src="assets/js/script.js"></script>
 		<script src="assets/js/lang.js"></script>
+		<script src="assets/js/moment-with-locales.min.js"></script>
 		<style type="text/css"></style>
 		<!-- start of favicon -->
 			<link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicon/apple-icon-57x57.png">
@@ -46,7 +47,7 @@
 					</tr> -->
 					<tr>
 						<th><span class="date" id="date"></span></th>
-						<td><span contenteditable="">date goes here</span></td>
+						<td><span contenteditable=""><script>document.write(moment().lang("en-gb").format('L'));</script></span></td>
 					</tr>
 					<tr>
 						<th><span class="amount" id="amount"></span></th>
