@@ -12,7 +12,7 @@
 	content:"περιγραφή" !important;
 }
 .rategr::before{
-	content:"τιμή" !important;
+	content:"επιτόκιο" !important;
 }
 .quantitygr::before{
 	content:"ποσότητα" !important;
@@ -24,7 +24,7 @@
 	content:"υποσύνολο" !important;
 }
 .taxgr::before{
-	content:"ΦΠΑ" !important;
+	content:"ΦΠΑ " !important;
 }
 .totalgr::before{
 	content:"σύνολο" !important;
@@ -37,7 +37,7 @@
 	content:"date" !important;
 }
 .amount::before{
-	content:"amountg" !important;
+	content:"amount" !important;
 }
 .item::before{
 	content:"item" !important;
@@ -58,7 +58,7 @@
 	content:"subtotal" !important;
 }
 .tax::before{
-	content:"tax" !important;
+	content:"TAX " !important;
 }
 .total::before{
 	content:"total" !important;
