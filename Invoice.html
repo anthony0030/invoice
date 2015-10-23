@@ -3,8 +3,11 @@
 		<meta charset="utf-8">
 		<title>Invoice</title>
 		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="assets/css/lang.css">
 		<link rel="license" href="http://www.opensource.org/licenses/mit-license/">
-		<script src="./Invoice_files/script.js"></script><style type="text/css"></style>
+		<script src="./Invoice_files/script.js"></script>
+		<script src="assets/js/lang.js"></script>
+		<style type="text/css"></style>
 	</head>
 	<body>
 		<header>
@@ -16,33 +19,35 @@
 				<p>Companys Name<br>customers name</p>
 			</address>
 			<table class="meta">
-				<tbody><tr>
-					<th><span contenteditable="">Invoice #</span></th>
-					<td><span contenteditable="">number goes here</span></td>
-				</tr>
-				<tr>
-					<th><span>Date</span></th>
-					<td><span contenteditable="">date goes here</span></td>
-				</tr>
-				<tr>
-					<th><span>Amount Due</span></th>
-					<td><span id="prefix">€</span><span>600.00</span></td>
-				</tr>
-			</tbody></table>
+				<tbody>
+					<!--<tr>
+						<th><span contenteditable="">Invoice #</span></th> 
+						<td><span contenteditable="">number goes here</span></td>
+					</tr> -->
+					<tr>
+						<th><span class="date" id="date"></span></th>
+						<td><span contenteditable="">date goes here</span></td>
+					</tr>
+					<tr>
+						<th><span class="amount" id="amount"></span></th>
+						<td><span id="prefix">€</span><span>600.00</span></td>
+					</tr>
+			</tbody>
+		</table>
 			<table class="inventory">
 				<thead>
 					<tr>
-						<th><span>Item</span></th>
-						<th><span>Description</span></th>
-						<th><span>Rate</span></th>
-						<th><span>Quantity</span></th>
-						<th><span>Price</span></th>
+						<th><span class="item" id="item"></span></th>
+						<th><span class="description" id="description"></span></th>
+						<th><span class="rate" id="rate"></span></th>
+						<th><span class="quantity" id="quantity"></span></th>
+						<th><span class="price" id="price"></span></th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
 						<td><a class="cut">-</a><span contenteditable="">Front End Consultation</span></td>
-						<td><span contenteditable="">Experience Review</span></td>
+						<td><span contenteditable="">Description</span></td>
 						<td><span>€</span><span contenteditable="">150.00</span></td>
 						<td><span contenteditable="">4</span></td>
 						<td><span>€</span><span>600.00</span></td>
@@ -52,15 +57,15 @@
 			<a class="add">-</a>
 			<table class="balance">
 				<tbody><tr>
-					<th><span>Sub-total</span></th>
+					<th><span class="subtotal" id="subtotal"></span></th>
 					<td><span>€</span><span>600.00</span></td>
 				</tr>
 				<tr>
-					<th><span>TAX </span><span contenteditable="">16</span>%</th>
+					<th><span class="tax" id="tax"></span><span contenteditable="">16</span>%</th>
 					<td><span>€</span><span>0.00</span></td>
 				</tr>
 				<tr>
-					<th><span>Total</span></th>
+					<th><span class="total" id="total"></span></th>
 					<td><span>€</span><span>600.00</span></td>
 				</tr>
 			</tbody></table>
@@ -73,6 +78,7 @@ pdfbuttonlabel="Save page as PDF"
 </script>
 <script src="http://www.web2pdfconvert.com/pdfbutton2.js" id="Web2PDF" type="text/javascript"></script>
 <!-- Web2PDF Converter Button END -->
-
-
-</body></html>
+	<button onclick="changelanggr()">gr</button>
+	<button onclick="changelangen()">en</button>
+</body>
+</html>

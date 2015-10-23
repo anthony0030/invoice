@@ -1,0 +1,66 @@
+/*start of greek*/
+.dategr::before{
+	content:"ημερομηνία " !important;
+}
+.amountgr::before{
+	content:"ποσό" !important;
+}
+.itemgr::before{
+	content:"στοιχείο" !important;
+}
+.descriptiongr::before{
+	content:"περιγραφή" !important;
+}
+.rategr::before{
+	content:"τιμή" !important;
+}
+.quantitygr::before{
+	content:"ποσότητα" !important;
+}
+.pricegr::before{
+	content:"τιμή" !important;
+}
+.subtotalgr::before{
+	content:"υποσύνολο" !important;
+}
+.taxgr::before{
+	content:"ΦΠΑ" !important;
+}
+.totalgr::before{
+	content:"σύνολο" !important;
+}
+/*end of greek*/
+
+
+/*start of english*/
+.date::before{
+	content:"date" !important;
+}
+.amount::before{
+	content:"amountg" !important;
+}
+.item::before{
+	content:"item" !important;
+}
+.description::before{
+	content:"description" !important;
+}
+.rate::before{
+	content:"rate" !important;
+}
+.quantity::before{
+	content:"quantity" !important;
+}
+.price::before{
+	content:"price" !important;
+}
+.subtotal::before{
+	content:"subtotal" !important;
+}
+.tax::before{
+	content:"tax" !important;
+}
+.total::before{
+	content:"total" !important;
+}
+/*end of english*/
