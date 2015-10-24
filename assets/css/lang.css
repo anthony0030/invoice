@@ -1,4 +1,7 @@
 /*start of greek*/
+.invoicegr::before{
+	content:"τιμολόγιο " !important;
+}
 .dategr::before{
 	content:"ημερομηνία " !important;
 }
@@ -33,6 +36,9 @@
 
 
 /*start of english*/
+.invoice::before{
+	content:"invoice " !important;
+}
 .date::before{
 	content:"date" !important;
 }

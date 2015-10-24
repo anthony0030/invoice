@@ -1,5 +1,6 @@
 function changelanggr()
 {
+    document.getElementById("invoice").className = "invoicegr";
     document.getElementById("date").className = "dategr";
     document.getElementById("amount").className = "amountgr";
     document.getElementById("item").className = "itemgr";
@@ -16,6 +17,7 @@ function changelanggr()
 
 function changelangen()
 {
+    document.getElementById("invoice").className = "invoice";
     document.getElementById("date").className = "date";
     document.getElementById("amount").className = "amount";
     document.getElementById("item").className = "item";
