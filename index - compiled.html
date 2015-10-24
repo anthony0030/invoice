@@ -307,19 +307,34 @@ tr:hover .cut { opacity: 1; }
 			//end of lang
 			//start of euro
 			function changeeuroon()
-{
+			{
 
-	document.getElementById("balance").style.display = "table";
-	document.getElementById("cpanel").style.marginTop = "0px";
-    document.getElementById("euroon").style.display = "none";
-    document.getElementById("eurooff").style.display = "block";
-}
+				document.getElementById("balance").style.display = "table";
+			    document.getElementById("num3").style.display = "table-row";
+		    	document.getElementById("euroon").style.display = "none";
+		    	document.getElementById("eurooff").style.display = "block";
+			}
 
-function changeeurooff(){document.getElementById("balance").style.display = "none";document.getElementById("cpanel").style.marginTop = "140px";document.getElementById("eurooff").style.display = "none";document.getElementById("euroon").style.display = "block";}
+			function changeeurooff()
+			{
+				document.getElementById("balance").style.display = "none";
+			    document.getElementById("num3").style.display = "none";
+				document.getElementById("eurooff").style.display = "none";
+				document.getElementById("euroon").style.display = "block";}
 			//end of euro
 			//start of color
-			function changecoloron(){document.getElementById("logo").src="https://cdn.rawgit.com/anthony0030/invoice/master/assets/img/logo/logo.jpg";document.getElementById("color").className = "nodisplay";document.getElementById("nocolor").className = "display";}
-function changecoloroff(){document.getElementById("logo").src="https://cdn.rawgit.com/anthony0030/invoice/master/assets/img/logo/logoblack.jpg";document.getElementById("nocolor").className = "nodisplay";document.getElementById("color").className = "display";}
+			function changecoloron()
+			{
+			document.getElementById("logo").src="https://cdn.rawgit.com/anthony0030/invoice/master/assets/img/logo/logo.jpg";
+			document.getElementById("color").className = "nodisplay";
+			document.getElementById("nocolor").className = "display";
+		}
+			
+			function changecoloroff()
+		{
+			document.getElementById("logo").src="https://cdn.rawgit.com/anthony0030/invoice/master/assets/img/logo/logoblack.jpg";
+			document.getElementById("nocolor").className = "nodisplay";
+			document.getElementById("color").className = "display";}
 
 
 			//end of color
@@ -680,7 +695,7 @@ llll:"ddd, D MMM YYYY HH:mm"},calendar:{sameDay:"[Hôm nay lúc] LT",nextDay:"[N
 						<th><span class="date" id="date"></span></th>
 						<td><span contenteditable=""><script>document.write(moment().lang("en-gb").format('L'));</script></span></td>
 					</tr>
-					<tr>
+					<tr class="" id="num3">
 						<th><span class="amount" id="amount"></span></th>
 						<td><span id="prefix">€</span><span>600.00</span></td>
 					</tr>
