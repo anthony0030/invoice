@@ -14,6 +14,7 @@
 			<script src="assets/js/cpanel/lang.js"></script>
 			<script src="assets/js/cpanel/color.js"></script>
 			<script src="assets/js/cpanel/euro.js"></script>
+			<script src="assets/js/cpanel/num.js"></script>
 		<!-- end of cpanel js -->
 		
 		<!-- start of favicon -->
@@ -49,17 +50,17 @@
 			<span><img alt="logo here!" src="assets/img/logo/logo.jpg" class="center logo" id="logo"></span>
 		</header>
 		<article>
-			<h1>Recipient</h1>
 			<address contenteditable="">
 				<p>Companys Name<br>customers name</p>
 			</address>
 			<table class="meta">
 				<tbody>
-					<!--<tr>
+					<tr class="" id="num2">
 						<th><span contenteditable="">Invoice #</span></th> 
-						<td><span contenteditable="">number goes here</span></td>
-					</tr> -->
-					<tr>
+						<td><span contenteditable=""></span>
+					</td>
+					</tr> 
+					<tr id="daterow">
 						<th><span class="date" id="date"></span></th>
 						<td><span contenteditable=""><script>document.write(moment().lang("en-gb").format('L'));</script></span></td>
 					</tr>
@@ -132,7 +133,16 @@
 					<div class="display" id="eurooff">
 						<img src="assets/img/euro/eurooff.jpg" onclick="changeeurooff()">
 					</div>
-				</td><!-- end of lang price -->
+				</td><!-- end of price -->
+
+				<td><!-- start of number -->
+					<div class="nodisplay" id="numon">
+						<img src="assets/img/num/numon.jpg" onclick="changenumon()">
+					</div>
+					<div class="display" id="numoff">
+						<img src="assets/img/num/numoff.jpg" onclick="changenumoff()">
+					</div>
+				</td><!-- end of number -->
 
 				
 				<td><!-- start of prin buton -->
