@@ -4,10 +4,10 @@
 		<title>Invoice</title>
 
 		<!-- start of CSS -->
+			<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" >
 			<link rel="stylesheet" href="assets/css/style.css">
 			<link rel="stylesheet" href="assets/css/lang.css">
 			<link rel="stylesheet" href="assets/css/custom.css">
-			<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" >
 			<style type="text/css"></style>
 		<!-- end of CSS -->
 
@@ -31,6 +31,7 @@
 		<!-- start of function js -->
 			<script src="assets/js/script.js"></script>
 			<script src="assets/js/date.js"></script>
+			<script src="assets/js/pdf.js"></script>
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 			<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 		<!-- end of function js -->
@@ -44,12 +45,12 @@
 
 
 
-
+<div class="bootstrap">
     <!-- Fixed navbar -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">Invoice</a>
+          <a class="navbar-brand">Invoice</a>
         </div>
         
         <div id="navbar" class="navbar-collapse collapse">
@@ -131,6 +132,7 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav>
+</div>
 
 
 
@@ -149,55 +151,56 @@
 			<table class="meta">
 				<tbody>
 					<tr class="" id="num2">
-						<th><span class="invoice" id="invoice">#</span></th> 
-						<td><span contenteditable=""></span>
+						<th style='font-weight:bold;'><span class="invoice" id="invoice">#</span></th> 
+						<td><span contenteditable=""><script>document.write(serial);</script></span>
 					</td>
 					</tr> 
 					<tr id="daterow">
-						<th><span class="date" id="date"></span></th>
-						<td><span contenteditable=""><script>document.write(today);</script></span></td>
+						<th style='font-weight:bold;'><span class="date" id="date"></span></th>
+						<td><span contenteditable=""><input type="date"></span></td>
 					</tr>
 					<tr class="" id="num3">
-						<th><span class="amount" id="amount"></span></th>
-						<td><span id="prefix">€</span><span>600.00</span></td>
+						<th style='font-weight:bold;'><span class="amount" id="amount"></span></th>
+						<td><span id="prefix">€</span><span></span></td>
 					</tr>
 			</tbody>
 		</table>
 			<table class="inventory">
 				<thead>
 					<tr>
-						<th><span class="item" id="item"></span></th>
-						<th><span class="description" id="description"></span></th>
-						<th><span class="rate" id="rate"></span></th>
-						<th><span class="quantity" id="quantity"></span></th>
-						<th><span class="price" id="price"></span></th>
+						<th style='font-weight:bold;'><span class="item" id="item"></span></th>
+						<th style='font-weight:bold;'><span class="description" id="description"></span></th>
+						<th style='font-weight:bold;'><span class="rate" id="rate"></span></th>
+						<th style='font-weight:bold;'><span class="quantity" id="quantity"></span></th>
+						<th style='font-weight:bold;'><span class="price" id="price"></span></th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<td><a class="cut">-</a><span contenteditable="">Front End Consultation</span></td>
+						<td><a class="cut">-</a><span contenteditable="">Item Name</span></td>
 						<td><span contenteditable="">Description</span></td>
-						<td><span>€</span><span contenteditable="">150.00</span></td>
-						<td><span contenteditable="">4</span></td>
-						<td><span>€</span><span>600.00</span></td>
+						<td><span>€</span><span contenteditable="">0.00</span></td>
+						<td><span contenteditable="">0</span></td>
+						<td><span>€</span><span></span></td>
 					</tr>
 				</tbody>
 			</table>
 			<a class="add noprint">+</a>
 			<table class="balance" id="balance">
 				<tbody><tr>
-					<th><span class="subtotal" id="subtotal"></span></th>
+					<th style='font-weight:bold;'><span class="subtotal" id="subtotal"></span></th>
 					<td><span>€</span><span>600.00</span></td>
 				</tr>
 				<tr>
-					<th><span class="tax" id="tax"></span><span contenteditable="">16</span>%</th>
+					<th style='font-weight:bold;'><span class="tax" id="tax"></span><span contenteditable="">16</span>%</th>
 					<td><span>€</span><span>0.00</span></td>
 				</tr>
 				<tr>
-					<th><span class="total" id="total"></span></th>
+					<th style='font-weight:bold;'><span class="total" id="total"></span></th>
 					<td><span>€</span><span>600.00</span></td>
 				</tr>
 			</tbody></table>
 		</article>
+		<button onClick="generatePDF();">pdf</button>
 	</body>
 </html>
