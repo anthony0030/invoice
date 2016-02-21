@@ -7,13 +7,13 @@
 			<link rel="stylesheet" href="assets/css/style.css">
 			<link rel="stylesheet" href="assets/css/lang.css">
 			<link rel="stylesheet" href="assets/css/custom.css">
-			<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" >
+			<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" >
 			<style type="text/css"></style>
 		<!-- end of CSS -->
 
 		<!-- start of cpanel js -->
 			<script src="assets/js/cpanel/lang.js"></script>
-			<script src="assets/js/cpanel/color.js"></script>
+			<script src="assets/js/cpanel/logo.js"></script>
 			<script src="assets/js/cpanel/euro.js"></script>
 			<script src="assets/js/cpanel/num.js"></script>
 		<!-- end of cpanel js -->
@@ -30,18 +30,119 @@
 
 		<!-- start of function js -->
 			<script src="assets/js/script.js"></script>
-			<script src="assets/js/moment-with-locales.min.js"></script>
+			<script src="assets/js/date.js"></script>
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+			<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 		<!-- end of function js -->
 
 		<link rel="license" href="http://www.opensource.org/licenses/mit-license/">
 	
 	</head>
+
+
+
+
+
+
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Invoice</a>
+        </div>
+        
+        <div id="navbar" class="navbar-collapse collapse">
+          
+        	<ul class="nav navbar-nav">
+            	<li class="dropdown">
+              		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Language<span class="caret"></span></a>
+              		<ul class="dropdown-menu">
+                		<li id="en" class="active"><a onClick="changelangen();">
+                			<img src="assets/img/flags/en.png"> English</a></li>
+                		<li id="gr" class=""><a onClick="changelanggr();">
+                			<img src="assets/img/flags/gr.png"> Greek</a></li>
+              		</ul>
+            	</li>
+        	</ul>
+
+        	<ul class="nav navbar-nav">
+            	<li class="dropdown">
+              		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Invoice Number<span class="caret"></span></a>
+              		<ul class="dropdown-menu">
+                		<li id="numon" class="active"><a onClick="changenumon();">
+                			<img src="assets/img/num/on.png"> ON</a></li>
+                		<li id="numoff" class=""><a onClick="changenumoff();">
+                			<img src="assets/img/num/off.png"> OFF</a></li>
+              		</ul>
+            	</li>
+        	</ul>
+
+        	<ul class="nav navbar-nav">
+            	<li class="dropdown">
+              		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Display Total<span class="caret"></span></a>
+              		<ul class="dropdown-menu">
+                		<li id="euroon" class="active"><a onClick="changeeuroon();">
+                			<img src="assets/img/euro/on.png"> ON</a></li>
+                		<li id="eurooff" class=""><a onClick="changeeurooff();">
+                			<img src="assets/img/euro/off.png"> OFF</a></li>
+              		</ul>
+            	</li>
+        	</ul>
+
+        	<ul class="nav navbar-nav">
+            	<li class="dropdown">
+              		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">logo<span class="caret"></span></a>
+              		<ul class="dropdown-menu">
+
+              			<!-- change color -->
+                		<li id="coloron" class="active"><a onClick="changecoloron();">
+                			<img src="assets/img/color/on.png"> ON</a></li>
+
+                		<li id="coloroff" class=""><a onClick="changecoloroff();">
+                			<img src="assets/img/color/off.png"> OFF</a></li>
+
+
+
+						<li role="separator" class="divider"></li>
+
+
+						<!-- change language -->
+                		<li id="logoen" class="active"><a onClick="changelogolangen();">
+                			<img src="assets/img/flags/en.png"> English</a></li>
+
+                		<li id="logogr" class=""><a onClick="changelogolanggr();">
+                			<img src="assets/img/flags/gr.png"> Greek</a></li>
+
+
+						<li role="separator" class="divider"></li>
+
+						<!-- change legal logo -->
+                		<li id="legalon" class="active"><a onClick="changelogolegalon();">
+                			<img src="assets/img/legal/on.png"> Legal</a></li>
+
+                		<li id="legaloff" class=""><a onClick="changelogolegaloff();">
+                			<img src="assets/img/legal/off.png"> Normal</a></li>
+
+              		</ul>
+            	</li>
+        	</ul>
+
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+
+
+
+
+
+
 	<body>
 		<header>
-			<span><img alt="logo here!" src="assets/img/logo/logo.jpg" class="center logo" id="logo"></span>
+			<span><img alt="logo here!" src="assets/img/logo/coloron/en/normal/logo.jpg" class="center logo" id="logo"></span>
 		</header>
-		<article>
+		<article class="invoicebody">
 			<address contenteditable="">
 				<p>Companys Name<br>customers name</p>
 			</address>
@@ -98,50 +199,5 @@
 				</tr>
 			</tbody></table>
 		</article>
-		<table class="cpanel noprint" id="cpanel">
-			<tr>
-				<td><!-- start of lang togle -->
-					<div class="nodisplay" id="en">
-						<img src="assets/img/flags/en.png" onclick="changelangen()">
-					</div>
-					<div class="display" id="gr">
-						<img src="assets/img/flags/gr.png" onclick="changelanggr()">
-					</div>
-				</td><!-- end of lang togle -->	
-
-				<td><!-- start of  color -->
-					<div class="nodisplay" id="color">
-						<img src="assets/img/color/color.jpg" onclick="changecoloron()">
-					</div>
-					<div class="display" id="nocolor">
-						<img src="assets/img/color/blackandwhite.jpg" onclick="changecoloroff()">
-					</div>
-				</td><!-- end of  color -->
-				
-				<td><!-- start of price -->
-					<div class="nodisplay" id="euroon">
-						<img src="assets/img/euro/euroon.jpg" onclick="changeeuroon()">
-					</div>
-					<div class="display" id="eurooff">
-						<img src="assets/img/euro/eurooff.jpg" onclick="changeeurooff()">
-					</div>
-				</td><!-- end of price -->
-
-				<td><!-- start of number -->
-					<div class="nodisplay" id="numon">
-						<img src="assets/img/num/numon.jpg" onclick="changenumon()">
-					</div>
-					<div class="display" id="numoff">
-						<img src="assets/img/num/numoff.jpg" onclick="changenumoff()">
-					</div>
-				</td><!-- end of number -->
-
-				
-				<td><!-- start of prin buton -->
-					<img src="assets/img/print.jpg" onclick="window.print()">
-				</td><!-- end of print buton -->
-				
-			</tr>
-		</table>
 	</body>
 </html>
