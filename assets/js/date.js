@@ -12,3 +12,4 @@ if(mm<10) {
 } 
 
 today = dd+'/'+mm+'/'+yyyy;
+serial = dd+mm+yyyy+Math.floor((Math.random() * 10) + 1)+Math.floor((Math.random() * 10) + 1)+Math.floor((Math.random() * 10) + 1)+Math.floor((Math.random() * 10) + 1);
