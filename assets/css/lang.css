@@ -1,72 +1,72 @@
 /*start of greek*/
 .invoicegr::before{
-	content:"τιμολόγιο " !important;
+	content:"Τιμολόγιο " !important;
 }
 .dategr::before{
-	content:"ημερομηνία " !important;
+	content:"Ημερομηνία " !important;
 }
 .amountgr::before{
-	content:"ποσό" !important;
+	content:"Ποσό" !important;
 }
 .itemgr::before{
-	content:"στοιχείο" !important;
+	content:"Στοιχείο" !important;
 }
 .descriptiongr::before{
-	content:"περιγραφή" !important;
+	content:"Περιγραφή" !important;
 }
 .rategr::before{
-	content:"επιτόκιο" !important;
+	content:"Επιτόκιο" !important;
 }
 .quantitygr::before{
-	content:"ποσότητα" !important;
+	content:"Ποσότητα" !important;
 }
 .pricegr::before{
-	content:"τιμή" !important;
+	content:"Τιμή" !important;
 }
 .subtotalgr::before{
-	content:"υποσύνολο" !important;
+	content:"Υποσύνολο" !important;
 }
 .taxgr::before{
 	content:"ΦΠΑ " !important;
 }
 .totalgr::before{
-	content:"σύνολο" !important;
+	content:"Σύνολο" !important;
 }
 /*end of greek*/
 
 
 /*start of english*/
 .invoice::before{
-	content:"invoice " !important;
+	content:"Invoice " !important;
 }
 .date::before{
-	content:"date" !important;
+	content:"Date" !important;
 }
 .amount::before{
-	content:"amount" !important;
+	content:"Amount" !important;
 }
 .item::before{
-	content:"item" !important;
+	content:"Item" !important;
 }
 .description::before{
-	content:"description" !important;
+	content:"Description" !important;
 }
 .rate::before{
-	content:"rate" !important;
+	content:"Rate" !important;
 }
 .quantity::before{
-	content:"quantity" !important;
+	content:"Quantity" !important;
 }
 .price::before{
-	content:"price" !important;
+	content:"Price" !important;
 }
 .subtotal::before{
-	content:"subtotal" !important;
+	content:"Subtotal" !important;
 }
 .tax::before{
 	content:"TAX " !important;
 }
 .total::before{
-	content:"total" !important;
+	content:"Total" !important;
 }
 /*end of english*/
