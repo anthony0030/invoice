@@ -30,11 +30,17 @@
 
 		<!-- start of function js -->
 			<script src="assets/js/script.js"></script>
+			<script src="assets/js/logosize.js"></script>
 			<script src="assets/js/date.js"></script>
-			<script src="assets/js/pdf.js"></script>
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 			<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 		<!-- end of function js -->
+
+
+
+
+
+
 
 		<link rel="license" href="http://www.opensource.org/licenses/mit-license/">
 	
@@ -48,6 +54,7 @@
 <div class="bootstrap">
     <!-- Fixed navbar -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
+    <a href="#" class="pull-left"><img src="assets/img/stamp.png" style="margin-left:5px; height:50px;"></a>
       <div class="container">
         <div class="navbar-header">
           <a class="navbar-brand">Invoice</a>
@@ -91,9 +98,10 @@
             	</li>
         	</ul>
 
+
         	<ul class="nav navbar-nav">
             	<li class="dropdown">
-              		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">logo<span class="caret"></span></a>
+              		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Logo<span class="caret"></span></a>
               		<ul class="dropdown-menu">
 
               			<!-- change color -->
@@ -124,15 +132,37 @@
 
                 		<li id="legaloff" class=""><a onClick="changelogolegaloff();">
                 			<img src="assets/img/legal/off.png"> Normal</a></li>
+              		
+						<li role="separator" class="divider"></li>
+
+						<li id="resetlogo" class=""><a onClick="resetlogosize(360);">Reset</a></li>
+
 
               		</ul>
             	</li>
         	</ul>
 
+        	<ul class="nav navbar-nav">
+						<li>
+							  <input type="range" id="sliderBar" min="0" max="720" value="360" step="1" value="0" onChange="logosize(this.value);" style="margin-top:15px;"/>
+						</li>
+        	</ul>
+
+       		<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a onClick="window.print()">
+						<img src="assets/img/print.png">
+						 Print / Save 
+						 <img src="assets/img/save.png">
+					</a>
+				</li>
+       		</ul>
+
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 </div>
+
 
 
 
@@ -200,7 +230,7 @@
 					<td><span>€</span><span>600.00</span></td>
 				</tr>
 			</tbody></table>
+			<div id="result" style="height:40px;width:40px;border:1px solid #999">
 		</article>
-		<button onClick="generatePDF();">pdf</button>
 	</body>
 </html>
