@@ -32,8 +32,9 @@
 			<script src="assets/js/script.js"></script>
 			<script src="assets/js/logosize.js"></script>
 			<script src="assets/js/date.js"></script>
+			<script src="assets/js/exporter.js"></script>
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-			<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+			<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 		<!-- end of function js -->
 
 
@@ -170,7 +171,7 @@
 
 
 
-	<body>
+	<body id="form">
 		<header>
 			<span><img alt="logo here!" src="assets/img/logo/coloron/en/normal/logo.jpg" class="center logo" id="logo"></span>
 		</header>
@@ -230,7 +231,8 @@
 					<td><span>€</span><span>600.00</span></td>
 				</tr>
 			</tbody></table>
-			<div id="result" style="height:40px;width:40px;border:1px solid #999">
+			<button onclick="exporter()">export</button>
 		</article>
 	</body>
+	<div id="resalt"></div>
 </html>
