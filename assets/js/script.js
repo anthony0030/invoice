@@ -68,11 +68,11 @@
 function generateTableRow() {
 	var emptyColumn = document.createElement('tr');
 
-	emptyColumn.innerHTML = '<td><a class="cut">-</a><span contenteditable></span></td>' +
-		'<td><span contenteditable></span></td>' +
-		'<td><span data-prefix>€</span><span contenteditable>0.00</span></td>' +
-		'<td><span contenteditable>0</span></td>' +
-		'<td><span data-prefix>€</span><span>0.00</span></td>';
+	emptyColumn.innerHTML ='<td><a class="cut">-</a><input type="text" placeholder="Item Name"></td>' +
+            '<td><input type="text" placeholder="Description"></td>' +
+            '<td><span>€</span><input type="text" placeholder=" 0"></td>' +
+            '<td><input type="text" placeholder="0"></td>' +
+            '<td><span>€</span><span></span></td>';
 
 	return emptyColumn;
 }

@@ -12,5 +12,5 @@ function import_file() {
 }
 
 function export_file() {
-
+	document.getElementById('my_form').submit();
 }

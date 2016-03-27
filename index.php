@@ -196,23 +196,24 @@
 </div>
 
 <body id="form">
+  <form name="my_form" id="my_form" method="post" action="handle-data.php">
     <header>
       <span><img alt="logo here!" src="assets/img/logo/coloron/en/normal/logo.jpg" class="center logo" id="logo"></span>
     </header>
     <article class="invoicebody">
-      <address contenteditable="">
-        <p>Companys Name<br>customers name</p>
-      </address>
+      <input type="text" name="company_name" placeholder="Companys Name"><br>
+      <input type="text" name="customer_name" placeholder="Customers name">
       <table class="meta" id="top_data_table">
         <tbody>
           <tr class="" id="invoice_number_row">
             <th style='font-weight:bold;'><span class="invoice" id="invoice">#</span></th> 
-            <td><span contenteditable=""><script></script></span>
+            <td>
+              <input name="serial" value="" id="serial">
           </td>
           </tr> 
           <tr id="daterow">
             <th style='font-weight:bold;'><span class="date" id="date"></span></th>
-            <td><span contenteditable=""><input type="date"></span></td>
+            <td><span contenteditable=""><input type="date" name="date"></span></td>
           </tr>
           <tr class="" id="total_block">
             <th style='font-weight:bold;'><span class="amount" id="amount"></span></th>
@@ -232,10 +233,10 @@
         </thead>
         <tbody>
           <tr>
-            <td><a class="cut">-</a><span contenteditable="">Item Name</span></td>
-            <td><span contenteditable="">Description</span></td>
-            <td><span>€</span><span contenteditable="">0.00</span></td>
-            <td><span contenteditable="">0</span></td>
+            <td><a class="cut">-</a><input type="text" placeholder="Item Name"></td>
+            <td><input type="text" placeholder="Description"></td>
+            <td><span>€</span><input type="text" placeholder=" 0"></td>
+            <td><input type="text" placeholder="0"></td>
             <td><span>€</span><span></span></td>
           </tr>
         </tbody>
@@ -244,22 +245,19 @@
       <table class="balance" id="balance">
         <tbody><tr>
           <th style='font-weight:bold;'><span class="subtotal" id="subtotal"></span></th>
-          <td><span>€</span><span>600.00</span></td>
+          <td><span>€ </span><span>0.00</span></td>
         </tr>
         <tr>
           <th style='font-weight:bold;'><span class="tax" id="tax"></span><span contenteditable="">16</span>%</th>
-          <td><span>€</span><span>0.00</span></td>
+          <td><span>€ </span><span>0.00</span></td>
         </tr>
         <tr>
           <th style='font-weight:bold;'><span class="total" id="total"></span></th>
-          <td><span>€</span><span>600.00</span></td>
+          <td><span>€ </span><span>0.00</span></td>
         </tr>
       </tbody>
     </table>
   </article>
+  </form> 
 </body>
-
-
-	
-
 </html>
