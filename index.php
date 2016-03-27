@@ -208,7 +208,7 @@
           <tr class="" id="invoice_number_row">
             <th style='font-weight:bold;'><span class="invoice" id="invoice">#</span></th> 
             <td>
-              <input name="serial" value="" id="serial">
+              <input type="text" name="serial" value="" id="serial">
           </td>
           </tr> 
           <tr id="daterow">
