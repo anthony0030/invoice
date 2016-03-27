@@ -222,6 +222,8 @@
       </tbody>
     </table>
       <table class="inventory">
+      
+
         <thead>
           <tr>
             <th style='font-weight:bold;'><span class="item" id="item"></span></th>
@@ -231,7 +233,12 @@
             <th style='font-weight:bold;'><span class="price" id="price"></span></th>
           </tr>
         </thead>
+      
+
+
         <tbody>
+
+
           <tr>
             <td><a class="cut">-</a><span contenteditable></span></td>
             <td><span contenteditable></span></td>
@@ -239,9 +246,21 @@
             <td><span contenteditable>0</span></td>
             <td><span data-prefix>€</span><span>0.00</span></td>
          </tr>
+
+         
         </tbody>
       </table>
+
+
       <a class="add noprint">+</a>
+
+
+
+
+
+
+
+
       <table class="balance" id="balance">
         <tbody><tr>
           <th style='font-weight:bold;'><span class="subtotal" id="subtotal"></span></th>
