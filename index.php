@@ -29,11 +29,11 @@
 		<!-- end of favicon -->
 
 		<!-- start of function js -->
+      <script src="new_file.js"></script>
 			<script src="assets/js/file.js"></script>
 			<script src="assets/js/script.js"></script>
 			<script src="assets/js/logosize.js"></script>
 			<script src="assets/js/date.js"></script>
-			<script src="assets/js/exporter.js"></script>
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 			<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 		<!-- end of function js -->
@@ -203,6 +203,6 @@
 
 
 	<body id="form">
-		<?php include('new_file.html'); ?>
+		<script type="text/javascript">document.write(new_file_data);</script>
 	</body>
 </html>
