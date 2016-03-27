@@ -256,8 +256,8 @@
 					<td><span>€</span><span>600.00</span></td>
 				</tr>
 			</tbody></table>
-			<button onclick="exporter()">export</button>
+			<!-- <button onclick="exporter()">export</button> -->
 		</article>
 	</body>
-	<div id="resalt"></div>
+<!-- 	<div id="resalt"></div> -->
 </html>
