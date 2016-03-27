@@ -68,17 +68,17 @@
               		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">File<span class="caret"></span></a>
               		<ul class="dropdown-menu">
                 		<li id="new">
-                			<a onClick="new();">
+                			<a onClick="new_file();">
                 				<span class="glyphicon glyphicon-plus"> New</span>
                 			</a>
                 		</li>
                 		<li id="import" class="">
-							<a onClick="export();">
+							<a onClick="import_file();">
                 				<span class="glyphicon glyphicon-open-file"> Open</span>
                 			</a>
                 		</li>
                 		<li id="export">
-                			<a onClick="export();">
+                			<a onClick="export_file();">
                 				<span class="glyphicon glyphicon-save-file"> Save</span>
                 			</a>
                 		</li>
