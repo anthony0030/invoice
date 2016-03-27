@@ -201,5 +201,4 @@
 	<body id="form">
 		<?php include('new_file.html'); ?>
 	</body>
-<!-- 	<div id="resalt"></div> -->
 </html>
