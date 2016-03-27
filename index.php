@@ -29,7 +29,6 @@
 		<!-- end of favicon -->
 
 		<!-- start of function js -->
-			<script src="assets/js/serial.js"></script>
 			<script src="assets/js/file.js"></script>
 			<script src="assets/js/script.js"></script>
 			<script src="assets/js/logosize.js"></script>
@@ -82,6 +81,11 @@
                 		<li id="export">
                 			<a onClick="export_file();">
                 				<span class="glyphicon glyphicon-save-file"> Save</span>
+                			</a>
+                		</li>
+                		<li id="new_serial">
+                			<a onClick="serial_file();">
+                				<span class="glyphicon glyphicon-barcode">  Serialize</span>
                 			</a>
                 		</li>
               		</ul>
