@@ -29,6 +29,8 @@
 		<!-- end of favicon -->
 
 		<!-- start of function js -->
+			<script src="assets/js/serial.js"></script>
+			<script src="assets/js/file.js"></script>
 			<script src="assets/js/script.js"></script>
 			<script src="assets/js/logosize.js"></script>
 			<script src="assets/js/date.js"></script>
