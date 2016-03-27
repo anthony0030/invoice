@@ -1,5 +1,5 @@
 function new_file() {
-
+	document.getElementById("file").innerHTML += new_file_data;
 }
 
 function serial_file() {

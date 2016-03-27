@@ -195,14 +195,10 @@
     </nav>
 </div>
 
+<div id="file"></div>
 
 
 
+	
 
-
-
-
-	<body id="form">
-		<script type="text/javascript">document.write(new_file_data);</script>
-	</body>
 </html>
