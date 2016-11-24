@@ -69,7 +69,7 @@
               		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">File<span class="caret"></span></a>
               		<ul class="dropdown-menu">
                 		<li id="new">
-                			<a onClick="new_file();">
+                			<a href="index.php" target="_blank">
                 				<span class="glyphicon glyphicon-plus"> New</span>
                 			</a>
                 		</li>
