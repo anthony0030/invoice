@@ -243,7 +243,7 @@
             <td><a class="cut">-</a><span contenteditable></span></td>
             <td><span contenteditable></span></td>
             <td><span data-prefix>€</span><span contenteditable>0.00</span></td>
-            <td><span contenteditable>0</span></td>
+            <td><span contenteditable>1</span></td>
             <td><span data-prefix>€</span><span>0.00</span></td>
          </tr>
 
