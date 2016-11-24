@@ -267,7 +267,7 @@
           <td><span>€ </span><span>0.00</span></td>
         </tr>
         <tr>
-          <th style='font-weight:bold;'><span class="tax" id="tax"></span><span contenteditable="">16</span>%</th>
+          <th style='font-weight:bold;'><span class="tax" id="tax"></span><span contenteditable="">24</span>%</th>
           <td><span>€ </span><span>0.00</span></td>
         </tr>
         <tr>
