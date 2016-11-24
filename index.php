@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html><head>
+<html id="html">
+  <head>
 		<meta charset="utf-8">
 		<title>Invoice</title>
 
