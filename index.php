@@ -30,7 +30,6 @@
 		<!-- end of favicon -->
 
 		<!-- start of function js -->
-      <script src="new_file.js"></script>
 			<script src="assets/js/file.js"></script>
 			<script src="assets/js/script.js"></script>
 			<script src="assets/js/logosize.js"></script>
