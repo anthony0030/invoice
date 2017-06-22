@@ -7,6 +7,17 @@ header img{
 	width: 50%;
 }
 
+div.container a.navbar-brand{
+	color: white;
+}
+img.stamp{
+	margin-left:5px;
+	height:50px;
+}
+.bold{
+	font-weight:bold;
+}
+
 @media print {
 	.noprint { display: none !important; }	
 }
