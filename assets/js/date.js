@@ -11,6 +11,8 @@ if(mm<10) {
     mm='0'+mm;
 } 
 
+
+
 today = dd+'/'+mm+'/'+yyyy;
 today_form = yyyy+'-'+dd+'-'+mm+' ';
-serial = dd+mm+yyyy+Math.floor((Math.random() * 10) + 1)+Math.floor((Math.random() * 10) + 1)+Math.floor((Math.random() * 10) + 1)+Math.floor((Math.random() * 10) + 1);
+var serial = Date.now();
