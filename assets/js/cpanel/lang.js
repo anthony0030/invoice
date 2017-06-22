@@ -1,33 +1,35 @@
 function changelanggr()
 {
-    document.getElementById("invoice").className = "invoicegr";
-    document.getElementById("date").className = "dategr";
-    document.getElementById("amount").className = "amountgr";
-    document.getElementById("item").className = "itemgr";
-    document.getElementById("description").className = "descriptiongr";
-    document.getElementById("rate").className = "rategr";
-    document.getElementById("quantity").className = "quantitygr";
-    document.getElementById("price").className = "pricegr";
-    document.getElementById("subtotal").className = "subtotalgr";
-    document.getElementById("tax").className = "taxgr";
-    document.getElementById("total").className = "totalgr";
+    document.getElementById("invoice").innerHTML = "Τιμολόγιο";
+    document.getElementById("date").innerHTML = "Ημερομηνία";
+    document.getElementById("amount").innerHTML = "Ποσό";
+    document.getElementById("item").innerHTML = "Στοιχείο";
+    document.getElementById("description").innerHTML = "Περιγραφή";
+    document.getElementById("rate").innerHTML = "Επιτόκιο";
+    document.getElementById("quantity").innerHTML = "Ποσότητα";
+    document.getElementById("price").innerHTML = "Τιμή";
+    document.getElementById("subtotal").innerHTML = "Υποσύνολο";
+    document.getElementById("tax").innerHTML = "ΦΠΑ ";
+    document.getElementById("total").innerHTML = "Σύνολο";
+
     document.getElementById("gr").className = "active";
     document.getElementById("en").className = "";
 }
 
 function changelangen()
 {
-    document.getElementById("invoice").className = "invoice";
-    document.getElementById("date").className = "date";
-    document.getElementById("amount").className = "amount";
-    document.getElementById("item").className = "item";
-    document.getElementById("description").className = "description";
-    document.getElementById("rate").className = "rate";
-    document.getElementById("quantity").className = "quantity";
-    document.getElementById("price").className = "price";
-    document.getElementById("subtotal").className = "subtotal";
-    document.getElementById("tax").className = "tax";
-    document.getElementById("total").className = "total";
+    document.getElementById("invoice").innerHTML = "Invoice";
+    document.getElementById("date").innerHTML = "Date";
+    document.getElementById("amount").innerHTML = "Amount";
+    document.getElementById("item").innerHTML = "Item";
+    document.getElementById("description").innerHTML = "Description";
+    document.getElementById("rate").innerHTML = "Rate";
+    document.getElementById("quantity").innerHTML = "Quantity";
+    document.getElementById("price").innerHTML = "Price";
+    document.getElementById("subtotal").innerHTML = "Subtotal ";
+    document.getElementById("tax").innerHTML = "TAX ";
+    document.getElementById("total").innerHTML = "Total ";
+
     document.getElementById("en").className = "active";
     document.getElementById("gr").className = "";
 }
