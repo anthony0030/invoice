@@ -22,9 +22,9 @@
   <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
   <link rel="manifest" href="assets/img/favicon/manifest.json">
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-TileImage" content="assets/img/favicon/ms-icon-144x144.png">
-  <meta name="theme-color" content="#ffffff">
+  <meta id="msapplication-TileColor" content="#ffffff">
+  <meta id="msapplication-TileImage" content="assets/img/favicon/ms-icon-144x144.png">
+  <meta id="theme-color" content="#ffffff">
   <!-- end of favicon -->
 
   <!-- start of function js -->
@@ -257,12 +257,12 @@
 
           <tr class="" id="invoice_number_row">
             <th class="bold"><span class="invoice" id="invoice">Invoice #</span></th> 
-            <td><input type="text" name="serial" value="" id="serial"></td>
+            <td><input type="text" id="serial" value="" id="serial"></td>
           </tr>
 
           <tr id="daterow">
             <th class="bold"><span class="date" id="date">Date</span></th>
-            <td><span contenteditable=""><input type="date" name="date"></span></td>
+            <td><span contenteditable=""><input type="date" id="date"></span></td>
           </tr>
 
           <tr class="" id="total_block">
