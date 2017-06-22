@@ -60,7 +60,9 @@ img.stamp{
 table.cpanel td {
     text-align: center;
 }
-
+.clientDetails{
+	width: 400px;
+}
 .bootstrap * {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
