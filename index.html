@@ -35,39 +35,28 @@
   <!-- end of function js -->
 
 
-<!-- start of CDN -->
+  <!-- start of CDN -->
 
-<!-- jQuery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="assets/js/jquery-1.11.3.min.js"><\/script>')</script>
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="assets/js/jquery-1.11.3.min.js"><\/script>')</script>
 
-<!-- Bootstrap -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script>window.jQuery.fn.modal || document.write('<script src="assets/bootstrap/js/bootstrap.min.js"><\/script>')</script>
-<script>
-    (function($) {
-        $(function() {
-            if ($('body').css('color') !== 'rgb(51, 51, 51)') {
-                $('head').prepend('<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">');
-            }
-        });
-    })(window.jQuery);
-</script>
-
-
-
-<!-- end of CDN -->
-
-
-
+  <!-- Bootstrap -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>window.jQuery.fn.modal || document.write('<script src="assets/bootstrap/js/bootstrap.min.js"><\/script>')</script>
+  <script>
+      (function($) {
+          $(function() {
+              if ($('body').css('color') !== 'rgb(51, 51, 51)') {
+                  $('head').prepend('<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">');
+              }
+          });
+      })(window.jQuery);
+  </script>
+  <!-- end of CDN -->
 
   <link rel="license" href="http://www.opensource.org/licenses/mit-license/">
-
 </head>
-
-
-
-
 
 
 <div class="bootstrap">
@@ -78,7 +67,7 @@
     </span>
     <div class="container">
       <div class="navbar-header">
-        <a class="navbar-brand" title="This is A Web App That was made By Anthony Veaudry For His father Dominique Veaudry For the creation of Proformas and invoices, Free thired party code was used. You Are free to modify And use this work, but not sell it. Anthony Veaudry Takes no responsibility for anything. ">Invoice</a>
+        <a class="navbar-brand" title="This is A Web App That was made By Anthony Veaudry For His father Dominique Veaudry For the creation of Proformas and invoices, Free thired party code was used. You Are free to modify And use this work, but not sell it. Anthony Veaudry Takes no responsibility for anything.">Invoice</a>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
        <ul class="nav navbar-nav">
@@ -166,12 +155,12 @@
         <ul class="dropdown-menu">
           <li id="euroon" class="active">
             <a onClick="changeeuroon();" title="Enable Invoice Number">
-              <img src="assets/img/euro/on.png"> ON
+              <img src="assets/img/euro/on.png">&nbsp;ON
             </a>
           </li>
           <li id="eurooff" class="">
             <a onClick="changeeurooff();" title="Disable Invoice Number">
-             <img src="assets/img/euro/off.png"> OFF
+             <img src="assets/img/euro/off.png">&nbsp;OFF
            </a>
          </li>
        </ul>
@@ -188,31 +177,28 @@
         <!-- change color -->
         <li id="coloron" class="active">
           <a onClick="changecoloron();" title="Enable Color For Logo">
-           <img src="assets/img/color/on.png"> ON
+           <img src="assets/img/color/on.png">&nbsp;ON
          </a>
        </li>
 
        <li id="coloroff" class="">
          <a onClick="changecoloroff();" title="Disable Color For Logo">
-           <img src="assets/img/color/off.png"> OFF
+           <img src="assets/img/color/off.png">&nbsp;OFF
          </a>
        </li>
 
-
-
        <li role="separator" class="divider"></li>
-
 
        <!-- change language -->
        <li id="logoen" class="active">
          <a onClick="changelogolangen();" title="Change Logo To English Version">
-           <img src="assets/img/flags/en.png"> English
+           <img src="assets/img/flags/en.png">&nbsp;English
          </a>
        </li>
 
        <li id="logogr" class="">
          <a onClick="changelogolanggr();" title="Change Logo To Greek Version">
-           <img src="assets/img/flags/gr.png"> Greek
+           <img src="assets/img/flags/gr.png">&nbsp;Greek
          </a>
        </li>
 
@@ -222,13 +208,13 @@
        <!-- change legal logo -->
        <li id="legalon" class="active">
         <a onClick="changelogolegalon();" title="Change Logo To Legal Version">
-         <img src="assets/img/legal/on.png"> Legal
+         <img src="assets/img/legal/on.png">&nbsp;Legal
        </a>
      </li>
 
      <li id="legaloff" class="">
        <a onClick="changelogolegaloff();" title="Change Logo To Normal Version">
-         <img src="assets/img/legal/off.png"> Normal
+         <img src="assets/img/legal/off.png">&nbsp;Normal
        </a>
      </li>
    </ul>
@@ -265,7 +251,7 @@
         <tbody>
 
           <tr class="" id="invoice_number_row">
-            <th class="bold"><span class="invoice" id="invoice">Invoice #</span></th> 
+            <th class="bold"><span class="invoice" id="invoice">Invoice&nbsp;#</span></th> 
             <td><input type="text" id="serial" value="" id="serial"></td>
           </tr>
 
@@ -326,9 +312,7 @@
             </td>
           </tr>
         </tbody>
-
       </table>
-
 
       <a class="add noprint" title="Add Item">+</a>
 
@@ -346,7 +330,7 @@
 
           <tr>
             <th class="bold">
-              <span class="tax" id="tax" contenteditable="">TAX </span>
+              <span class="tax" id="tax" contenteditable="">TAX&nbsp;</span>
               <span contenteditable="">24</span>%
             </th>
             <td>
