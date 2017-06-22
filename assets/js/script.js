@@ -69,7 +69,7 @@ function generateTableRow() {
 	var emptyColumn = document.createElement('tr');
 
  
-  emptyColumn.innerHTML = '<td><a class="cut">-</a><span contenteditable></span></td>' + 
+  emptyColumn.innerHTML = '<td><a class="cut" title="Remove Item">-</a><span contenteditable></span></td>' + 
     '<td><span contenteditable></span></td>' + 
     '<td><span data-prefix>€</span><span contenteditable>0.00</span></td>' + 
     '<td><span contenteditable>1</span></td>' + 
