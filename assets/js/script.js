@@ -165,6 +165,9 @@ function updateInvoice() {
 /* On Content Load
 /* ========================================================================== */
 
+var rows = 1;
+var padding = 5
+
 function onContentLoad() {
 	updateInvoice();
 
@@ -179,15 +182,27 @@ function onContentLoad() {
 
 		if (e.target.matchesSelector('.add')) {
 			document.querySelector('table.inventory tbody').appendChild(generateTableRow());
-		}
-		else if (e.target.className == 'cut') {
-			row = e.target.ancestorQuerySelector('tr');
-
-			row.parentNode.removeChild(row);
+      rows++;
+      resizeRows("ADD")
+    }
+    else if (e.target.className == 'cut') {
+      row = e.target.ancestorQuerySelector('tr');
+      row.parentNode.removeChild(row);
+      rows--;
+      resizeRows("REMOVE")
 		}
 
 		updateInvoice();
 	}
+
+  function resizeRows(type){
+    if(type === "ADD"){
+      padding = padding - 0.25;
+    }else{
+      padding = padding + 0.25;
+    }
+    $('table.inventory td').css("padding", padding);
+  }
 
 	function onEnterCancel(e) {
 		e.preventDefault();
