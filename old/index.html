@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html id="html">
+<head>
+  <meta charset="utf-8">
+  <title>Invoice</title>
+
+  <!-- start of CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/custom.css">
+  <style type="text/css"></style>
+  <!-- end of CSS -->
+
+  <!-- start of cpanel js -->
+  <script src="assets/js/cpanel/lang.js"></script>
+  <script src="assets/js/cpanel/logo.js"></script>
+  <script src="assets/js/cpanel/euro.js"></script>
+  <script src="assets/js/cpanel/num.js"></script>
+  <!-- end of cpanel js -->
+
+  <!-- start of favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="assets/img/favicon/manifest.json">
+  <meta id="msapplication-TileColor" content="#ffffff">
+  <meta id="msapplication-TileImage" content="assets/img/favicon/ms-icon-144x144.png">
+  <meta id="theme-color" content="#ffffff">
+  <!-- end of favicon -->
+
+  <!-- start of function js -->
+  <script src="assets/js/serial.js"></script>
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/date.js"></script>
+  <script src="assets/js/save.js"></script>
+  <!-- end of function js -->
+
+
+  <!-- start of CDN -->
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="assets/js/jquery-1.11.3.min.js"><\/script>')</script>
+
+  <!-- Bootstrap -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>window.jQuery.fn.modal || document.write('<script src="assets/bootstrap/js/bootstrap.min.js"><\/script>')</script>
+  <script>
+      (function($) {
+          $(function() {
+              if ($('body').css('color') !== 'rgb(51, 51, 51)') {
+                  $('head').prepend('<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">');
+              }
+          });
+      })(window.jQuery);
+  </script>
+  <!-- end of CDN -->
+
+  <link rel="license" href="http://www.opensource.org/licenses/mit-license/">
+</head>
+
+
+<div class="bootstrap">
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <span href="#" class="pull-left">
+      <img src="assets/img/stamp.png" class="stamp" title="This Stamp belongs To Anthony Veaudry it is one of his Trademarks And he will not be happy if you pass it as your own">
+    </span>
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" title="This is A Web App That was made By Anthony Veaudry For His father Dominique Veaudry For the creation of Proformas and invoices, Free thired party code was used. You Are free to modify And use this work, but not sell it. Anthony Veaudry Takes no responsibility for anything.">Invoice</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+       <ul class="nav navbar-nav">
+
+         <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" title="File Options">
+            File&nbsp;
+            <span class="caret"></span>
+          </a>
+
+          <ul class="dropdown-menu">
+            <li id="new">
+             <a href="index.html" target="_blank" title="Save or Print File With Browser Dialog">
+              <span class="glyphicon glyphicon-plus">&nbsp;New</span>
+            </a>
+          </li>
+
+          <li id="import" class="hidden">
+            <a onClick="import_file();">
+              <span class="glyphicon glyphicon-open-file">&nbsp;Open</span>
+            </a>
+          </li>
+
+          <li id="export">
+            <a onClick="window.print()" title="Save or Print File With Browser Dialog">
+              <span class="glyphicon glyphicon-save-file">&nbsp;Save</span>
+            </a>
+          </li>
+          <li id="new_serial">
+            <a onClick="serial_file();" title="Populate Invoice Number With Unix Time-Stamp">
+              <span class="glyphicon glyphicon-barcode">&nbsp;Serialize</span>
+            </a>
+          </li>
+          <li id="no_serial">
+            <a onClick="un_serial_file();" title="Un-Populate Invoice Number">
+              <span class="glyphicon glyphicon-fire">&nbsp;Un-Serialize</span>
+            </a>
+          </li>
+        </ul>
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" title="Change Language">
+            Language&nbsp;
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li id="en" class="active">
+              <a onClick="changelangen();" title="Change Language to English">
+                <img src="assets/img/flags/en.png">&nbsp;English
+              </a>
+            </li>
+            <li id="gr" class="">
+              <a onClick="changelanggr();" title="Change Language to Greek">
+                <img src="assets/img/flags/gr.png">&nbsp;Greek
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" title="Enable or Disable Invoice Numbering">
+            Invoice Number&nbsp;
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li id="numon" class="active">
+            <a onClick="changenumon();" title="Enable Invoice Numbering">
+              <img src="assets/img/num/on.png">&nbsp;ON
+            </a>
+            </li>
+            <li id="numoff" class="">
+              <a onClick="changenumoff();" title="Disable Invoice Numbering">
+                <img src="assets/img/num/off.png">&nbsp;OFF
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav">
+       <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" title="Hide or Display Invoice Total">
+          Display Total&nbsp;
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li id="euroon" class="active">
+            <a onClick="changeeuroon();" title="Enable Invoice Number">
+              <img src="assets/img/euro/on.png">&nbsp;ON
+            </a>
+          </li>
+          <li id="eurooff" class="">
+            <a onClick="changeeurooff();" title="Disable Invoice Number">
+             <img src="assets/img/euro/off.png">&nbsp;OFF
+           </a>
+         </li>
+       </ul>
+     </li>
+   </ul>
+
+   <ul class="nav navbar-nav">
+     <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" title="Change The Logo That Will Be Displayed">
+        Logo&nbsp;
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <!-- change color -->
+        <li id="coloron" class="active">
+          <a onClick="changecoloron();" title="Enable Color For Logo">
+           <img src="assets/img/color/on.png">&nbsp;ON
+         </a>
+       </li>
+
+       <li id="coloroff" class="">
+         <a onClick="changecoloroff();" title="Disable Color For Logo">
+           <img src="assets/img/color/off.png">&nbsp;OFF
+         </a>
+       </li>
+
+       <li role="separator" class="divider"></li>
+
+       <!-- change language -->
+       <li id="logoen" class="active">
+         <a onClick="changelogolangen();" title="Change Logo To English Version">
+           <img src="assets/img/flags/en.png">&nbsp;English
+         </a>
+       </li>
+
+       <li id="logogr" class="">
+         <a onClick="changelogolanggr();" title="Change Logo To Greek Version">
+           <img src="assets/img/flags/gr.png">&nbsp;Greek
+         </a>
+       </li>
+
+
+       <li role="separator" class="divider"></li>
+
+       <!-- change legal logo -->
+       <li id="legalon" class="active">
+        <a onClick="changelogolegalon();" title="Change Logo To Legal Version">
+         <img src="assets/img/legal/on.png">&nbsp;Legal
+       </a>
+     </li>
+
+     <li id="legaloff" class="">
+       <a onClick="changelogolegaloff();" title="Change Logo To Normal Version">
+         <img src="assets/img/legal/off.png">&nbsp;Normal
+       </a>
+     </li>
+   </ul>
+ </li>
+ <!-- Trigger the modal with a button -->
+<button type="button" class="btn btn btn-lg" data-toggle="modal" data-target="#myModal_0">Setup Wizard !</button>
+</ul>
+
+<ul class="nav navbar-nav navbar-right">
+  <li>
+    <a onClick="window.print()" title="Save Or Print File With Browser Dialog">
+      <img src="assets/img/print.png">&nbsp;Print&nbsp;/&nbsp;Save&nbsp;<img src="assets/img/save.png">
+    </a>
+  </li>
+</ul>
+</div>
+</nav>
+</div>
+
+<body id="form">
+  <form>
+    <header>
+      <span>
+        <img alt="logo here!" src="assets/img/logo/coloron/en/normal/logo.jpg" class="center logo" id="logo" title="This Buissnes card is Property of Dominique Veaudry And Anthony Veaudry.">
+      </span>
+    </header>
+
+    <article class="invoicebody">
+      <input type="text" class="clientDetails" id="company_name"  placeholder="Companys Name"><br>
+      <input type="text" class="clientDetails" id="customer_name" placeholder="Customers name"><br>
+      <input type="text" class="clientDetails" id="occupation"    placeholder="occupation"><br>
+      <input type="text" class="clientDetails" id="afm"           placeholder="ΑΦΜ"><br>
+      <input type="text" class="clientDetails" id="doy"           placeholder="ΔΟΥ">
+
+      <table class="meta" id="top_data_table">
+        <tbody>
+
+          <tr class="" id="invoice_number_row">
+            <th class="bold"><span class="invoice" id="invoice">Invoice&nbsp;#</span></th> 
+            <td><input type="text" id="serial" value="" id="serial"></td>
+          </tr>
+
+          <tr id="daterow">
+            <th class="bold"><span class="date" id="date">Date</span></th>
+            <td><span contenteditable=""><input type="date" id="date"></span></td>
+          </tr>
+
+          <tr class="" id="total_block">
+            <th class="bold"><span class="amount" id="amount">Ammout</span></th>
+            <td><span id="prefix">€</span><span></span></td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      <table class="inventory">
+
+
+        <thead>
+          <tr>
+            <th class="bold">
+              <span class="item" id="item">Item</span>
+            </th>
+            <th class="bold">
+              <span class="description" id="description">Description</span>
+            </th>
+            <th class="bold">
+              <span class="rate" id="rate">Rate</span>
+            </th>
+            <th class="bold">
+              <span class="quantity" id="quantity">Quantity</span>
+            </th>
+            <th class="bold">
+              <span class="price" id="price">Price</span>
+            </th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>
+              <a class="cut" title="Remove Item">-</a>
+              <span contenteditable></span>
+            </td>
+            <td>
+              <span contenteditable></span>
+              </td>
+            <td>
+              <span data-prefix>€</span>
+              <span contenteditable>0.00</span>
+            </td>
+            <td>
+              <span contenteditable>1</span>
+            </td>
+            <td>
+              <span data-prefix>€</span><span>0.00</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <a class="add noprint" title="Add Item">+</a>
+
+      <table class="balance" id="balance">
+        <tbody>
+
+          <tr>
+            <th class="bold">
+              <span class="subtotal" id="subtotal">Subtotal</span>
+            </th>
+            <td>
+              <span>€ </span><span>0.00</span>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="bold">
+              <span class="tax" id="tax" contenteditable="">TAX&nbsp;</span>
+              <span contenteditable="">24</span>%
+            </th>
+            <td>
+              <span>€ </span><span>0.00</span>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="bold">
+              <span class="total" id="total">Total</span>
+            </th>
+            <td>
+              <span>€ </span><span>0.00</span>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </article>
+  </form>
+
+
+<!-- Modal 0 -->
+<div id="myModal_0" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <!-- Modal 0 content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Setup</h4>
+      </div>
+      <div class="modal-body" class="modal-body text-center">
+        What Language for the form?<br> 
+        <button type="button" class="btn btn-default" onclick="changelanggr()">
+          <span class="glyphicon glyphicon-heart-empty">&nbsp;Greek</span>
+        </button>
+        <button type="button" class="btn btn-default" onclick="changelangen()">
+          <span class="glyphicon glyphicon-globe">&nbsp;English</span>
+        </button>
+      </div>
+      <div class="modal-footer text-center">
+        <button type="button" class="btn btn-default" data-dismiss="modal">
+          <span class="glyphicon glyphicon-remove-circle">&nbsp;Close</span>
+        </button>
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal_1" data-dismiss="modal">
+          Next&nbsp;<span class="glyphicon glyphicon-chevron-right"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal 1 -->
+<div id="myModal_1" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <!-- Modal 1 content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Setup</h4>
+      </div>
+      <div class="modal-body" class="modal-body">
+        Do you whant to Display an invoice number?<br> 
+        <button type="button" class="btn btn-default" onclick="changenumon()">
+          <span class="glyphicon glyphicon-ok">&nbsp;Yes</span>
+        </button>
+        <button type="button" class="btn btn-default" onclick="changenumoff()">
+          <span class="glyphicon glyphicon-remove">&nbsp;No</span>
+        </button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal_0" data-dismiss="modal">
+          <span class="glyphicon glyphicon-chevron-left">&nbsp;Back</span>
+        </button>
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal_2" data-dismiss="modal">
+          Next&nbsp;<span class="glyphicon glyphicon-chevron-right"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 2 -->
+<div id="myModal_2" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <!-- Modal 2 content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Setup</h4>
+      </div>
+      <div class="modal-body" class="modal-body">
+        total at the botom of the page?<br> 
+        <button type="button" class="btn btn-default" onclick="changeeuroon()">
+          <span class="glyphicon glyphicon-eye-open">&nbsp;Display</span>
+        </button>
+        <button type="button" class="btn btn-default" onclick="changeeurooff()">
+          <span class="glyphicon glyphicon-eye-close">&nbsp;Hide</span>
+        </button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal_1" data-dismiss="modal">
+          <span class="glyphicon glyphicon-chevron-left">&nbsp;Back</span>
+        </button>
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal_3" data-dismiss="modal">
+          Next&nbsp;<span class="glyphicon glyphicon-chevron-right"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 3 -->
+<div id="myModal_3" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <!-- Modal 3 content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Setup</h4>
+      </div>
+      <div class="modal-body" class="modal-body">
+        Waht Color do you like your logo?<br> 
+        <button type="button" class="btn btn-default" onclick="changecoloron()">
+          <span class="glyphicon glyphicon-tint">&nbsp;Colorfull</span>
+        </button>
+        <button type="button" class="btn btn-default" onclick="changecoloroff()">
+          <span class="glyphicon glyphicon-adjust">&nbsp;Greyscale</span>
+        </button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal_2" data-dismiss="modal">
+          <span class="glyphicon glyphicon-chevron-left">&nbsp;Back</span>
+        </button>
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal_4" data-dismiss="modal">
+          Next&nbsp;<span class="glyphicon glyphicon-chevron-right"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal 4 -->
+<div id="myModal_4" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <!-- Modal 4 content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Setup</h4>
+      </div>
+      <div class="modal-body" class="modal-body">
+        What Language Would you like the logo?<br> 
+        <button type="button" class="btn btn-default" onclick="changelogolanggr()">
+          <span class="glyphicon glyphicon-heart-empty">&nbsp;Greek</span>
+        </button>
+        <button type="button" class="btn btn-default" onclick="changelogolangen()">
+          <span class="glyphicon glyphicon-globe">&nbsp;English</span>
+        </button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal_3" data-dismiss="modal">
+          <span class="glyphicon glyphicon-chevron-left">&nbsp;Back</span>
+        </button>
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal_5" data-dismiss="modal">
+          Next&nbsp;<span class="glyphicon glyphicon-chevron-right"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 5 -->
+<div id="myModal_5" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <!-- Modal 5 content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Setup</h4>
+      </div>
+      <div class="modal-body" class="modal-body">
+        would you like to Display your Full Buissnes information?<br> 
+        <button type="button" class="btn btn-default" onclick="changelogolegalon()">
+          <span class="glyphicon glyphicon-briefcase">&nbsp;Legal</span>
+        </button>
+        <button type="button" class="btn btn-default" onclick="changelogolegaloff()">
+          <span class="glyphicon glyphicon-certificate">&nbsp;Normal</span>
+        </button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal_4" data-dismiss="modal">
+         <span class="glyphicon glyphicon-chevron-left">&nbsp;Back</span>
+        </button>
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal_6" data-dismiss="modal">
+          Next&nbsp;<span class="glyphicon glyphicon-chevron-right"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 6 -->
+<div id="myModal_6" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <!-- Modal 6 content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Setup</h4>
+      </div>
+      <div class="modal-body" class="modal-body">
+        Click "Serialie!" to stamp the document with a unix time stamp<br> 
+        <button type="button" class="btn btn-default" onclick="serial_file()">
+          <span class="glyphicon glyphicon-barcode">&nbsp;Serialize</span>
+        </button>
+        <button type="button" class="btn btn-default" onclick="un_serial_file()">
+          <span class="glyphicon glyphicon-fire">&nbsp;Un-Serialize</span>
+        </button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal_5" data-dismiss="modal">
+          <span class="glyphicon glyphicon-chevron-left">&nbsp;Back</span>
+        </button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">
+          Close&nbsp;<span class="glyphicon glyphicon-remove-circle"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</body>
+</html>
