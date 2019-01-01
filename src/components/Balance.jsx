@@ -1,13 +1,14 @@
 import React from 'react';
 
 const Meta = (props) => {
-  const { setTax } = props;
+  const { SetState, state } = props;
+  const { tax, subtotal } = state;
   return (
     <table className="balance">
       <tbody>
         <tr>
           <th>Subtotal</th>
-          <td>€ 26</td>
+          <td>€ {subtotal}</td>
         </tr>
         <tr>
           <th>
@@ -17,14 +18,14 @@ const Meta = (props) => {
               min="0"
               max="100"
               defaultValue="26"
-              onBlur={(event) => setTax(event.target.value)}
+              onBlur={(event) => SetState("tax", event.target.value)}
             />%
           </th>
-          <td>€ 6.76</td>
+          <td>€ {(tax / 100) * subtotal}</td>
         </tr>
         <tr>
           <th>Total</th>
-          <td>€ 32.76</td>
+          <td>€ {(tax / 100) * subtotal + subtotal}</td>
         </tr>
       </tbody>
     </table>

@@ -27,107 +27,26 @@ class App extends Component {
       customerOccupation: "",
       AFM: "",
       DOY: "",
-      subtotal: 0
+      subtotal: 1
     };
   }
 
-  setCompanyName = (value) => {
+  SetState = (key, value) => {
     this.setState({
-      companyName: value,
-    });
-  }
-
-  setCustomerName = (value) => {
-    this.setState({
-      customerName: value,
-    });
-  }
-
-  setCustomerOccupation = (value) => {
-    this.setState({
-      customerOccupation: value,
-    });
-  }
-
-  setAFM = (value) => {
-    this.setState({
-      AFM: value,
-    });
-  }
-
-  setDOY = (value) => {
-    this.setState({
-      DOY: value,
-    });
-  }
-
-  toggleLogoColor = (value) => {
-    this.setState({
-      logoColor: value,
-    });
-  }
-
-  toggleLogoLanguage = (value) => {
-    this.setState({
-      logoLanguage: value,
-    });
-  }
-
-  toggleLogoLegal = (value) => {
-    this.setState({
-      logoLegal: value,
-    });
-  }
-
-  toggleLanguage = (value) => {
-    this.setState({
-      language: value,
-    });
-  }
-
-  toggleDisplayTotal = (value) => {
-    this.setState({
-      displayTotal: value,
-    });
-  }
-
-  toggleInvoiceNumber = (value) => {
-    this.setState({
-      displayInvoiceNumber: value,
-    });
-  }
-
-  setTax = (value) =>{
-    console.log("heloooo")
-    console.log(value)
-    this.setState({
-      tax: value,
+      [key]: value,
     });
   }
 
   render() {
     return (
       <React.Fragment>
-        <MainNav
-          toggleLogoColor={this.toggleLogoColor}
-          toggleLogoLanguage={this.toggleLogoLanguage}
-          toggleLogoLegal={this.toggleLogoLegal}
-          toggleLanguage={this.toggleLanguage}
-          toggleDisplayTotal={this.toggleDisplayTotal}
-          toggleInvoiceNumber={this.toggleInvoiceNumber}
-        />
+        <MainNav SetState={this.SetState}/>
         <div className="page">
           <Header/>
-          <ClientDetails
-            setCompanyName={this.setCompanyName}
-            setCustomerName={this.setCustomerName}
-            setCustomerOccupation={this.setCustomerOccupation}
-            setAFM={this.setAFM}
-            setDOY={this.setDOY}
-          />
-          <Meta/>
+          <ClientDetails SetState={this.SetState}/>
+          <Meta SetState={this.SetState} state={this.state}/>
           <Items/>
-          <Balance setTax={this.setTax}/>
+          <Balance SetState={this.SetState} state={this.state}/>
         </div>
       </React.Fragment>
     );

@@ -29,14 +29,7 @@ class MainNav extends Component {
     });
   }
   render() {
-    const {
-      toggleLanguage,
-      toggleDisplayTotal,
-      toggleLogoColor,
-      toggleLogoLanguage,
-      toggleLogoLegal,
-      toggleInvoiceNumber
-    } = this.props;
+    const { SetState } = this.props;
     return (
       <Navbar color="dark" dark expand="md">
         <NavbarBrand href="/">
@@ -48,14 +41,10 @@ class MainNav extends Component {
         <Collapse isOpen={this.state.isOpen} navbar>
           <Nav className="ml-auto" navbar>
             <File/>
-            <Language toggleLanguage={toggleLanguage}/>
-            <InvoiceNumber toggleInvoiceNumber={toggleInvoiceNumber}/>
-            <DisplayTotal toggleDisplayTotal={toggleDisplayTotal}/>
-            <Logo
-              toggleLogoColor={toggleLogoColor}
-              toggleLogoLanguage={toggleLogoLanguage}
-              toggleLogoLegal={toggleLogoLegal}
-            />
+            <Language SetState={SetState}/>
+            <InvoiceNumber SetState={SetState}/>
+            <DisplayTotal SetState={SetState}/>
+            <Logo SetState={SetState}/>
           </Nav>
         </Collapse>
       </Navbar>

@@ -1,6 +1,8 @@
 import React from 'react';
 
-const Meta = () => {
+const Meta = (props) => {
+  const { SetState, state } = props;
+  const {tax, subtotal} = state;
   return (
     <table className="meta">
       <tbody>
@@ -10,11 +12,16 @@ const Meta = () => {
         </tr>
         <tr>
           <th>Date</th>
-          <td><input type="date" id="date"/></td>
+          <td>
+            <input
+              type="date"
+              onBlur={(event) => SetState("invoiceDate", event.target.value)}
+            />
+          </td>
         </tr>
         <tr>
           <th>Ammout</th>
-          <td>€ 32.76</td>
+          <td>€ {(tax / 100) * subtotal + subtotal}</td>
         </tr>
       </tbody>
     </table>
