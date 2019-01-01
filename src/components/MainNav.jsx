@@ -4,13 +4,7 @@ import {
   Navbar,
   NavbarToggler,
   NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem
+  Nav
 } from 'reactstrap';
 import File from "./MainNav/File"
 import Language from "./MainNav/Language"
@@ -35,18 +29,33 @@ class MainNav extends Component {
     });
   }
   render() {
+    const {
+      toggleLanguage,
+      toggleDisplayTotal,
+      toggleLogoColor,
+      toggleLogoLanguage,
+      toggleLogoLegal,
+      toggleInvoiceNumber
+    } = this.props;
     return (
       <Navbar color="dark" dark expand="md">
-      <img src={stamp} alt="" className="stamp"/>
-        <NavbarBrand href="/">Invoice</NavbarBrand>
+        <NavbarBrand href="/">
+          <img src={stamp} alt="" className="stamp" />
+          &nbsp;
+          Invoice
+        </NavbarBrand>
         <NavbarToggler onClick={this.toggle} />
         <Collapse isOpen={this.state.isOpen} navbar>
           <Nav className="ml-auto" navbar>
             <File/>
-            <Language/>
-            <InvoiceNumber/>
-            <DisplayTotal/>
-            <Logo/>
+            <Language toggleLanguage={toggleLanguage}/>
+            <InvoiceNumber toggleInvoiceNumber={toggleInvoiceNumber}/>
+            <DisplayTotal toggleDisplayTotal={toggleDisplayTotal}/>
+            <Logo
+              toggleLogoColor={toggleLogoColor}
+              toggleLogoLanguage={toggleLogoLanguage}
+              toggleLogoLegal={toggleLogoLegal}
+            />
           </Nav>
         </Collapse>
       </Navbar>

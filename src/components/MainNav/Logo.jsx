@@ -11,42 +11,31 @@ import EN from "../../img/flags/en.png"
 import Legal from "../../img/legal/legal.png"
 import Normal from "../../img/legal/normal.png"
 
-const Language = () => {
+const Language = (props) => {
+  const { toggleLogoColor, toggleLogoLanguage, toggleLogoLegal } = props;
   return (
     <UncontrolledDropdown nav inNavbar>
       <DropdownToggle nav caret>Logo</DropdownToggle>
       <DropdownMenu right>
-        <DropdownItem>
-          <img src={ON} alt="ON Logo" />
-          &nbsp;
-          ON
+        <DropdownItem onClick={ () => toggleLogoColor(true)}>
+          <img src={ON} alt="ON Logo" />&nbsp;ON
         </DropdownItem>
-        <DropdownItem>
-          <img src={OFF} alt="OFF Logo" />
-          &nbsp;
-          OFF
+        <DropdownItem onClick={ () => toggleLogoColor(false)}>
+          <img src={OFF} alt="OFF Logo" />&nbsp;OFF
         </DropdownItem>
         <DropdownItem divider />
-        <DropdownItem>
-          <img src={EN} alt="English Flag" />
-          &nbsp;
-          English
+        <DropdownItem onClick={() => toggleLogoLanguage("en")}>
+          <img src={EN} alt="English Flag" />&nbsp;English
         </DropdownItem>
-        <DropdownItem>
-          <img src={EL} alt="Greek Flag" />
-          &nbsp;
-          Greek
+        <DropdownItem onClick={() => toggleLogoLanguage("el")}>
+          <img src={EL} alt="Greek Flag" />&nbsp;Greek
         </DropdownItem>
         <DropdownItem divider />
-        <DropdownItem>
-          <img src={Legal} alt="Legal" />
-          &nbsp;
-          Legal
+        <DropdownItem onClick={() => toggleLogoLegal(true)}>
+          <img src={Legal} alt="Legal" />&nbsp;Legal
         </DropdownItem>
-        <DropdownItem>
-          <img src={Normal} alt="Normal" />
-          &nbsp;
-          Normal
+        <DropdownItem onClick={() => toggleLogoLegal(false)}>
+          <img src={Normal} alt="Normal" />&nbsp;Normal
         </DropdownItem>
       </DropdownMenu>
     </UncontrolledDropdown>);

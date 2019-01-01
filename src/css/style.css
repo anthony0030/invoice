@@ -3,7 +3,6 @@
 *
 {
 	border: 0;
-	box-sizing: content-box;
 	color: inherit;
 	font-family: inherit;
 	font-size: inherit;
@@ -132,7 +131,13 @@ aside h1 { border-color: #999; border-bottom-style: solid; }
 	text-shadow: 0 -1px 2px rgba(0,0,0,0.333);
 }
 
-.add { margin: -2.5em 0 0; }
+.add {
+  margin: -2.5em 0 0;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  line-height: 22px;
+}
 
 .add:hover { background: #00ADEE; }
 
