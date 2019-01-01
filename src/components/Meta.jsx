@@ -2,14 +2,16 @@ import React from 'react';
 
 const Meta = (props) => {
   const { SetState, state } = props;
-  const {tax, subtotal} = state;
+  const { tax, subtotal, displayInvoiceNumber} = state;
   return (
     <table className="meta">
       <tbody>
-        <tr>
-          <th>Invoice&nbsp;#</th>
-          <td><input type="text"/></td>
-        </tr>
+        { displayInvoiceNumber?
+          <tr>
+            <th>Invoice&nbsp;#</th>
+            <td><input type="text"/></td>
+          </tr>
+        : null }
         <tr>
           <th>Date</th>
           <td>

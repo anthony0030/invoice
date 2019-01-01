@@ -38,6 +38,7 @@ class App extends Component {
   }
 
   render() {
+    const { displayTotal } = this.state
     return (
       <React.Fragment>
         <MainNav SetState={this.SetState}/>
@@ -46,7 +47,9 @@ class App extends Component {
           <ClientDetails SetState={this.SetState}/>
           <Meta SetState={this.SetState} state={this.state}/>
           <Items/>
-          <Balance SetState={this.SetState} state={this.state}/>
+          { displayTotal?
+            <Balance SetState={this.SetState} state={this.state}/>
+          :null }
         </div>
       </React.Fragment>
     );
